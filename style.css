@@ -17,16 +17,19 @@ ul {
 section {
     background: #eff2f9;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.main-section {
+/* .main-section {
     width: 1440px;
     height: 1024px;
     background: #eff2f9;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .card {
     width: 1170px;
@@ -71,11 +74,9 @@ section {
     transition: 200ms;
 }
 
-.preview.selected {
-    box-shadow: 8px 8px 16px 0 rgba(81, 91, 117, 0.25);
-}
 
-.preview:hover {
+.preview:hover,
+.preview.selected {
     box-shadow: 8px 8px 16px 0 rgba(81, 91, 117, 0.25);
     transition: 200ms;
 }
@@ -84,6 +85,8 @@ section {
 
 .product-info-block {
     padding: 0 60px;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -128,11 +131,36 @@ h1 {
 }
 
 
-.colors-list {
+.colors-items {
     display: flex;
     gap: 40px;
     align-items: center;
 }
+
+.colors-items > li {
+    width: 30px;
+    height: 30px;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.colors-items > li:hover,
+.colors-items > Li.selected {
+    box-shadow: 2px 2px 6px 0 rgba(81, 91, 117, 0.25);
+}
+
+
+/* li.selected {
+    border-radius: 50%;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    padding: 7px;
+    box-shadow: 2px 2px 6px 0 rgba(81, 91, 117, 0.25);
+    } */
+
 
 .circle {
     border-radius: 50%;
@@ -161,14 +189,6 @@ h1 {
     background-color: #f2c723;
 }
 
-/* li.selected {
-    border-radius: 50%;
-    background-color: #fff;
-    width: 30px;
-    height: 30px;
-    padding: 7px;
-    box-shadow: 2px 2px 6px 0 rgba(81, 91, 117, 0.25);
-    } */
 
     .wrapper {
         display: flex;
@@ -179,16 +199,23 @@ h1 {
     }
 
 .quantity {
-    font-family: "Rubik", sans-serif;
+    font-family: inherit;
     width: 80px;
     font-size: 20px;
     font-weight: 500;
     color: rgba(20, 20, 20, 0.8);
+   
     border: none;
     appearance: none;
     background-image: url("./assets/images/ph_caret-down-bold.svg");
     background-repeat: no-repeat;
     background-position: right 0 top 50%;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: rgba(20, 20, 20, 0.8);
     cursor: pointer;
 }
 
@@ -196,7 +223,6 @@ h1 {
     font-family: "Rubik", sans-serif;
     font-weight: 500;
     font-size: 20px;
-   
     text-transform: uppercase;
     color: rgba(20, 20, 20, 0.8);
 }
@@ -213,7 +239,12 @@ h1 {
     font-weight: 500;
     letter-spacing: 0.18px;
     margin-top: 75px;
-    /* margin-bottom: 30px; */
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
 }
 
 
